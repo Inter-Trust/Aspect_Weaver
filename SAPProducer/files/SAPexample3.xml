@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ak:adaptationPlan xmlns:ak="http://inter-trust.eu/schema/AspectualKnowledge/ak" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://inter-trust.eu/schema/AspectualKnowledge/ak AspectualKnowledge-schema.xsd ">
+  <ak:instance id="user001"/>
+  <ak:ADD>
+  <ak:advisor advice-ref="a1" id="Authentication.certificate" name="Authentication.certificate" pointcut-ref="p1" type="AspectJ"/>
+  	<ak:advisor advice-ref="a1" id="Authentication.biometrics" name="Authentication.biometrics" pointcut-ref="p1" type="AspectJ"/>
+  </ak:ADD>
+  <ak:REMOVE>
+  </ak:REMOVE>
+  <ak:CONFIGURE>
+  </ak:CONFIGURE>
+</ak:adaptationPlan>

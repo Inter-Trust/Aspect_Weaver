@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ak:adaptationPlan xmlns:ak="http://inter-trust.eu/schema/AspectualKnowledge/ak" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://inter-trust.eu/schema/AspectualKnowledge/ak AspectualKnowledge-schema.xsd ">
+  <ak:instance id="user001"/>
+  <ak:ADD>
+    <ak:advisor advice-ref="VoteRejectionAdvice" id="VoteRejection" name="VoteRejection" pointcut-ref="Vote" type="SpringAOP">
+	  <ak:pointcut expression="execution(public void uma.caosd.evoting.impl.SimpleBallot.vote(..))" id="Vote" name="Vote"/>
+      <ak:advice classname="uma.caosd.evoting.server.aspects.VoteRejection" filepath="E:\workspaces\Java\workspace_INTERTRUST\EVoting-CaseStudy\target\VoteRejection.jar" id="VoteRejectionAdvice">
+        <ak:functionalities>
+          <ak:functionality id="voterejection"/>
+        </ak:functionalities>
+      </ak:advice>
+	</ak:advisor>
+		
+  </ak:ADD>
+  <ak:REMOVE>
+  </ak:REMOVE>
+  <ak:CONFIGURE>
+  </ak:CONFIGURE>
+</ak:adaptationPlan>
