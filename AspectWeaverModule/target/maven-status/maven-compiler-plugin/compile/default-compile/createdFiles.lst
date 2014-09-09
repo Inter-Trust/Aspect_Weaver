@@ -1,0 +1,11 @@
+uma\caosd\AspectWeaverModule\AspectWeaver.class
+uma\caosd\AspectWeaverModule\main\MainTesting.class
+uma\caosd\AspectWeaverModule\AspectJExecuteTheSecurityAdaptationPlan.class
+uma\caosd\AspectWeaverModule\gui\AspectWeaverController.class
+uma\caosd\AspectWeaverModule\SpringAOPExecuteTheSecurityAdaptationPlan.class
+uma\caosd\AspectWeaverModule\errorHandling\ErrorHandling.class
+uma\caosd\AspectWeaverModule\amqp\SAPAspectWeaverAMQPConsumer.class
+uma\caosd\AspectWeaverModule\main\Main.class
+uma\caosd\AspectWeaverModule\ExecuteTheSecurityAdaptationPlan.class
+uma\caosd\AspectWeaverModule\gui\AspectWeaverView.class
+uma\caosd\AspectWeaverModule\amqp\AspectWeaverAMQPConfiguration.class
