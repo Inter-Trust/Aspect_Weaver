@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sds:sds xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+   xmlns:sds='http://inter-trust.eu/schema/interpreter/sds'
+   xsi:schemaLocation='http://inter-trust.eu/schema/interpreter/sds SDS.xsd'>
+   <sds:deploy>
+        <sds:category id="http://inter-trust.eu/security/authentication">
+            <sds:securityConcept id="1" type="http://inter-trust.eu/security/authentication">
+                <sds:target id="authenticationPoints"/>
+                <sds:functionality id="http://inter-trust.eu/security/authentication#certificate-authentication"/>
+                <sds:functionality id="http://inter-trust.eu/security/authentication#x509certificate"/>
+                <sds:configuration>
+                    <sds:securityParameters>
+                        <sds:parameter name="Certificate">X509</sds:parameter>
+                    </sds:securityParameters>
+                </sds:configuration>
+            </sds:securityConcept>
+        </sds:category>
+    </sds:deploy>
+    <sds:undeploy>
+    </sds:undeploy>
+</sds:sds>

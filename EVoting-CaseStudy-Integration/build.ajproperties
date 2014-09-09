@@ -1,0 +1,7 @@
+src.includes = src/main/java/,\
+               src/test/java/,\
+               src/main/resources/,\
+               src/main/java/uma/caosd/evoting/server/aspects/AuthenticationAspect_Server.aj
+src.inclusionpatterns = src/main/resources/**/*.java
+src.excludes = src/main/java/uma/caosd/evoting/server/aspects/,\
+               src/main/java/uma/caosd/evoting/server/gui/EVotingServerGUISwing.aj

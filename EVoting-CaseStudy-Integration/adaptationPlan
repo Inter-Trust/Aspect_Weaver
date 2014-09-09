@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<adaptationPlan xmlns="http://inter-trust.eu/schema/AspectualKnowledge/ak">
+    <instance id="USER ID PRUEBA (SDSAnalysis -&gt; getInstanceID)"/>
+    <ADD>
+        <advisor id="Authentication.certificate" name="Authentication.certificate" advice-ref="certificate" pointcut-ref="authenticationPoints" type="AspectJ">
+            <configuration>
+                <configurationParameters>
+                    <parameter>
+                        <name>Certificate</name>
+                        <value>X509</value>
+                    </parameter>
+                </configurationParameters>
+            </configuration>
+            <pointcut id="authenticationPoints" name="authenticationPoints" expression="execution(public void uma.caosd.evoting.Ballot.vote(Vote)) &amp;&amp;               args(vote);"/>
+            <advice id="certificate" classname="uma.caosd.evoting.server.aspects.AuthenticationAspect_Server" filepath="">
+                <functionalities>
+                    <functionality id="http://inter-trust.eu/security/authentication#certificate-authentication"/>
+                    <functionality id="http://inter-trust.eu/security/authentication#x509certificate"/>
+                </functionalities>
+            </advice>
+        </advisor>
+    </ADD>
+    <REMOVE/>
+    <CONFIGURE>
+        <advisor id="Authentication.certificate" name="Authentication.certificate" advice-ref="certificate" pointcut-ref="authenticationPoints" type="AspectJ">
+            <configuration>
+                <configurationParameters>
+                    <parameter>
+                        <name>Certificate</name>
+                        <value>X509</value>
+                    </parameter>
+                </configurationParameters>
+            </configuration>
+            <pointcut id="authenticationPoints" name="authenticationPoints" expression="execution(public void uma.caosd.evoting.Ballot.vote(Vote)) &amp;&amp;               args(vote);"/>
+            <advice id="certificate" classname="uma.caosd.evoting.server.aspects.AuthenticationAspect_Server" filepath="">
+                <functionalities>
+                    <functionality id="http://inter-trust.eu/security/authentication#certificate-authentication"/>
+                    <functionality id="http://inter-trust.eu/security/authentication#x509certificate"/>
+                </functionalities>
+            </advice>
+        </advisor>
+    </CONFIGURE>
+</adaptationPlan>

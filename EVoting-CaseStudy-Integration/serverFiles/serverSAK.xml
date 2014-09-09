@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ak:aspectualKnowledge xmlns:ak="http://inter-trust.eu/schema/AspectualKnowledge/ak" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://inter-trust.eu/schema/AspectualKnowledge/ak AspectualKnowledge-schema.xsd ">
+  <ak:pointcuts>
+    <ak:pointcut expression="execution(public void uma.caosd.evoting.Ballot.vote(Vote)) &amp;&amp;
+													 args(vote);" id="authenticationPoints" name="authenticationPoints"/>
+  </ak:pointcuts>
+  <ak:advices>
+    <ak:adviceCategory id="Authentication">
+      <ak:advice classname="uma.caosd.evoting.server.aspects.AuthenticationAspect_Server" filepath="" id="certificate">
+        <ak:functionalities>
+          <ak:functionality id="http://inter-trust.eu/security/authentication#certificate-authentication"/>
+          <ak:functionality id="http://inter-trust.eu/security/authentication#x509certificate"/>
+        </ak:functionalities>
+      </ak:advice>
+      <ak:advice classname="uma.caosd.evoting.server.aspects.AuthenticationAspect_Server" filepath="" id="userPass">
+        <ak:functionalities>
+          <ak:functionality id="http://inter-trust.eu/security/authentication#userpass-authentication"/>
+        </ak:functionalities>
+      </ak:advice>
+      <ak:advice classname="uma.caosd.evoting.server.aspects.AuthenticationAspect_Server" filepath="" id="bioAuth">
+        <ak:functionalities>
+          <ak:functionality id="http://inter-trust.eu/security/authentication#biometrics-authentication"/>
+        </ak:functionalities>
+      </ak:advice>
+    </ak:adviceCategory>
+  </ak:advices>
+  <ak:advisors>
+    <ak:advisorCategory id="Authentication">
+      <ak:advisor advice-ref="certificate" id="Authentication.certificate" name="Authentication.certificate" pointcut-ref="authenticationPoints" type="AspectJ">
+        <ak:configuration>sak:configuration</ak:configuration>
+      </ak:advisor>
+      <ak:advisor advice-ref="userPass" id="Authentication.userPass" name="Authentication.userPass" pointcut-ref="authenticationPoints" type="AspectJ"></ak:advisor>
+      <ak:advisor advice-ref="bioAuth" id="Authentication.biometrics" name="Authentication.biometrics" pointcut-ref="authenticationPoints" type="AspectJ"></ak:advisor>
+    </ak:advisorCategory>
+  </ak:advisors>
+</ak:aspectualKnowledge>

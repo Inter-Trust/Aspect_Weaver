@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ak:aspectualKnowledge xmlns:ak="http://inter-trust.eu/schema/AspectualKnowledge/ak" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://inter-trust.eu/schema/AspectualKnowledge/ak AspectualKnowledge-schema.xsd ">
+  <ak:pointcuts>
+    <ak:pointcut expression="" id="http://inter-trust.eu/csa/vehicle/camsender/camencoding"/>
+  </ak:pointcuts>
+  <ak:advices>
+    <ak:adviceCategory id="http://inter-trust.eu/security/messagesecurity">
+      <ak:advice id="cipherMessageAdvice">
+        <ak:functionalities>
+          <ak:functionality id="http://inter-trust.eu/security/confidentiality/encryption"/>
+          <ak:functionality id="http://inter-trust.eu/security/securemsgformat/etsi"/>
+          <ak:functionality id="http://inter-trust.eu/security/authentication/x509certificate"/>
+          <ak:functionality id="http://inter-trust.eu/security/algorithm/rsa"/>
+          <ak:functionality id="http://inter-trust.eu/security/padding/oaep_sha256_mgf1"/>
+        </ak:functionalities>
+      </ak:advice>
+    </ak:adviceCategory>
+  </ak:advices>
+  <ak:advisors>
+    <ak:advisorCategory id="http://inter-trust.eu/security/messagesecurity">
+      <ak:advisor advice-ref="cipherMessage" id="cipherMessageAdvice" pointcut-ref="http://inter-trust.eu/csa/vehicle/camsender/camencoding" type="AspectJ"/>
+    </ak:advisorCategory>
+  </ak:advisors>
+</ak:aspectualKnowledge>

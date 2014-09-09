@@ -1,0 +1,6 @@
+src.includes = src/main/java/,\
+               src/main/resources/,\
+               src/test/java/
+src.excludes = src/main/resources/**,\
+               src/main/java/uma/caosd/evoting/intertrust/SpringAOPProxyActivationAspect.aj,\
+               src/main/java/uma/caosd/evoting/server/AspectWeaverLaunchImpl.aj
