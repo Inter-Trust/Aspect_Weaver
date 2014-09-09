@@ -1,0 +1,9 @@
+uma\caosd\DynamicSpringAOP\ProxySpringAOP.class
+uma\caosd\DynamicSpringAOP\Utils.class
+uma\caosd\DynamicSpringAOP\imp\ProxySpringAOPImp.class
+uma\caosd\DynamicSpringAOP\DynamicSpringAOPWeaver.class
+uma\caosd\DynamicSpringAOP\XMLAspectConfigurator.class
+uma\caosd\DynamicSpringAOP\DynamicSpringAOPAspect.class
+uma\caosd\DynamicSpringAOP\ProxiesRepository.class
+uma\caosd\DynamicSpringAOP\SpringAOPAspect.class
+uma\caosd\DynamicSpringAOP\DynamicURLClassLoader.class
