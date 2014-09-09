@@ -1,0 +1,12 @@
+-1.6
+-encoding
+UTF-8
+-classpath
+E:\maven\repository\junit\junit\4.11\junit-4.11.jar;E:\maven\repository\org\aspectj\aspectjrt\1.7.3\aspectjrt-1.7.3.jar;E:\maven\repository\org\aspectj\aspectjtools\1.7.3\aspectjtools-1.7.3.jar;E:\maven\repository\uma\caosd\AspectualKnowledge\0.0.1-SNAPSHOT\AspectualKnowledge-0.0.1-SNAPSHOT.jar;E:\maven\repository\uma\caosd\AMQP-ActiveMQ\0.0.1-SNAPSHOT\AMQP-ActiveMQ-0.0.1-SNAPSHOT.jar;E:\maven\repository\org\apache\activemq\activemq-all\5.9.1\activemq-all-5.9.1.jar;E:\maven\repository\org\apache\directory\studio\org.apache.commons.codec\1.8\org.apache.commons.codec-1.8.jar;E:\maven\repository\commons-codec\commons-codec\1.8\commons-codec-1.8.jar;E:\workspaces\Java\workspace_INTERTRUST\INTERTRUST-Aspects\target\classes
+-d
+E:\workspaces\Java\workspace_INTERTRUST\INTERTRUST-Aspects\target\classes
+E:\workspaces\Java\workspace_INTERTRUST\INTERTRUST-Aspects\src\main\java\uma\caosd\intertrust\aspects\amqp\StatusAspectAMQPConsumer.java
+E:\workspaces\Java\workspace_INTERTRUST\INTERTRUST-Aspects\src\main\java\uma\caosd\intertrust\aspects\gui\IntertrustAspectGUI.java
+E:\workspaces\Java\workspace_INTERTRUST\INTERTRUST-Aspects\src\main\java\uma\caosd\intertrust\aspects\IntertrustAspect.java
+E:\workspaces\Java\workspace_INTERTRUST\INTERTRUST-Aspects\src\main\java\uma\caosd\intertrust\aspects\IntertrustInitialization.aj
+E:\workspaces\Java\workspace_INTERTRUST\INTERTRUST-Aspects\src\main\java\uma\caosd\intertrust\aspects\QueueThread.java
