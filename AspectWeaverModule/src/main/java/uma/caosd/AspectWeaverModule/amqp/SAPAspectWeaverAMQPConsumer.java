@@ -23,6 +23,7 @@ public class SAPAspectWeaverAMQPConsumer extends ActiveMQConsumer {
 		
 		//AdaptationPlan sap = SerializationUtils.stringToObject(content);
 		AdaptationPlan sap = XMLUtils.read(content, AdaptationPlan.class);
+		XMLUtils.writeTemp("adaptationPlan", sap, AdaptationPlan.class);
 		aspectWeaver.executeAdaptationPlan(sap);
 		
 		System.out.println(getClass().getSimpleName() + ">> adaptation plan executed.");	

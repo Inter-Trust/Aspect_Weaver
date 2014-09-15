@@ -17,6 +17,7 @@ public abstract aspect AuthenticationExample extends IntertrustAspect {
 		// Get the configuration of the advice for a particular user:
 		Object configuration = StatusAspect.getConfiguration(ADVISOR_ID, getUserID(vote));
 		
+		System.out.println("AuthenticationExample");
 		// ...
 		return proceed(vote);
 		// ...

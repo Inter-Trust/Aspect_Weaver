@@ -12,6 +12,9 @@ import org.springframework.aop.Advisor;
 import uma.caosd.DynamicSpringAOP.ProxiesRepository;
 import uma.caosd.DynamicSpringAOP.ProxySpringAOP;
 import uma.caosd.DynamicSpringAOP.imp.ProxySpringAOPImp;
+import uma.caosd.errorHandling.DeploymentStatusSingleton;
+import uma.caosd.errors.Module;
+import uma.caosd.errors.Type;
 
 /**
  * This aspect intercepts all the method executions of the indicate target objects to:
@@ -76,14 +79,24 @@ public abstract aspect ProxyActivationAspect {
 			try {
 				res = method.invoke(proxy, args);
 			} catch (SecurityException e) {
+				String desc = "Error enabling dynamic weaving in class: " + o.getClass().getName() + ". SecurityException.";
+				DeploymentStatusSingleton.getStatus().addError(desc, Module.ASPECT_WEAVER, Type.SPRING_AOP_WEAVER);
 				e.printStackTrace();
 			} catch (IllegalAccessException e) {
+				String desc = "Error enabling dynamic weaving in class: " + o.getClass().getName() + ". IllegalAccessException.";
+				DeploymentStatusSingleton.getStatus().addError(desc, Module.ASPECT_WEAVER, Type.SPRING_AOP_WEAVER);
 				e.printStackTrace();
 			} catch (IllegalArgumentException e) {
+				String desc = "Error enabling dynamic weaving in class: " + o.getClass().getName() + ". IllegalArgumentException.";
+				DeploymentStatusSingleton.getStatus().addError(desc, Module.ASPECT_WEAVER, Type.SPRING_AOP_WEAVER);
 				e.printStackTrace();
 			} catch (InvocationTargetException e) {
+				String desc = "Error enabling dynamic weaving in class: " + o.getClass().getName() + ". InvocationTargetException.";
+				DeploymentStatusSingleton.getStatus().addError(desc, Module.ASPECT_WEAVER, Type.SPRING_AOP_WEAVER);
 				e.printStackTrace();
 			} catch (Exception e) {
+				String desc = "Error enabling dynamic weaving in class: " + o.getClass().getName() + ". Exception.";
+				DeploymentStatusSingleton.getStatus().addError(desc, Module.ASPECT_WEAVER, Type.SPRING_AOP_WEAVER);
 				e.printStackTrace();
 			}
 			adviceExecution = false;

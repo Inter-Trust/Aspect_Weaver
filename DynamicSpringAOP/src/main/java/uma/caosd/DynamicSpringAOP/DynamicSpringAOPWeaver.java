@@ -13,6 +13,9 @@ import uma.caosd.AspectualKnowledge.Advisor;
 import uma.caosd.AspectualKnowledge.DynamicAspects.DynamicAspect;
 import uma.caosd.AspectualKnowledge.DynamicAspects.DynamicRepository;
 import uma.caosd.AspectualKnowledge.DynamicAspects.DynamicWeaver;
+import uma.caosd.errorHandling.DeploymentStatusSingleton;
+import uma.caosd.errors.Module;
+import uma.caosd.errors.Type;
 
 /**
  * Dynamic aspect weaver for SpringAOP aspects.
@@ -58,9 +61,15 @@ public class DynamicSpringAOPWeaver extends DynamicWeaver {
 			XMLAspectConfigurator.generateConfigXML(aspect, filepath);
 			appContext = new FileSystemXmlApplicationContext(new String[]{filepath});
 		} catch (IOException e) {
+			String desc = "Error loading aspect configuration file";
+			DeploymentStatusSingleton.getStatus().addError(desc, Module.ASPECT_WEAVER, Type.SPRING_AOP_WEAVER);
+			
 			System.out.println(getClass().getSimpleName() + ">>Error loading aspect configuration file.");
 			e.printStackTrace();
 		} catch (Exception e) {
+			String desc = "Error loading bean for aspect configuration file.";
+			DeploymentStatusSingleton.getStatus().addError(desc, Module.ASPECT_WEAVER, Type.SPRING_AOP_WEAVER);
+			
 			System.out.println(getClass().getSimpleName() + ">>Error loading bean for aspect configuration file.");
 			e.printStackTrace();
 		}

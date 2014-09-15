@@ -28,9 +28,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/v4-topics/AspectGenerationModule-0.0.1-SNAPSHOT-shaded.jar"/>
 	<classpathentry kind="lib" path="lib/v4-topics/AspectualKnowledge-0.0.1-SNAPSHOT-shaded.jar"/>
-	<classpathentry kind="lib" path="lib/v4-topics/AspectWeaverModule-0.0.1-SNAPSHOT-shaded.jar"/>
 	<classpathentry kind="lib" path="lib/v4-topics/INTERTRUST-Aspects-0.0.1-SNAPSHOT-shaded.jar"/>
+	<classpathentry kind="lib" path="lib/v4-topics/AspectGenerationModule-0.0.1-SNAPSHOT-shaded.jar"/>
+	<classpathentry kind="lib" path="lib/v4-topics/AspectWeaverModule-0.0.1-SNAPSHOT-shaded.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

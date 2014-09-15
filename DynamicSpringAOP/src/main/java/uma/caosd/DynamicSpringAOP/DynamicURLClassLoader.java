@@ -7,6 +7,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 
+import uma.caosd.errorHandling.DeploymentStatusSingleton;
+import uma.caosd.errors.Module;
+import uma.caosd.errors.Type;
+
 /**
  * Dynamic URL ClassLoader.
  * It allows the addition of new files to the classpath at runtime, by using reflection.
@@ -26,6 +30,9 @@ public class DynamicURLClassLoader {
 		try {
 			addUrlToClassPath(path.toURI().toURL(), classloader);
 		} catch (MalformedURLException e) {
+			String desc = "Error adding file to classpath. File: " + path;
+			DeploymentStatusSingleton.getStatus().addError(desc, Module.ASPECT_WEAVER, Type.SPRING_AOP_WEAVER);
+			
 			System.out.println("Error adding file to classpath. File: " + path);
 			e.printStackTrace();
 		}
@@ -43,10 +50,16 @@ public class DynamicURLClassLoader {
 			invokeDeclared(URLClassLoader.class, classloader, "addURL",
 									   new Class[]{URL.class}, new Object[]{url});
 		} catch (IllegalAccessException e) {
+			String desc = "Error adding url to classpath. URL: " + url + ". IllegalAccessException.";
+			DeploymentStatusSingleton.getStatus().addError(desc, Module.ASPECT_WEAVER, Type.SPRING_AOP_WEAVER);
 			e.printStackTrace();
 		} catch (NoSuchMethodException e) {
+			String desc = "Error adding url to classpath. URL: " + url + ". NoSuchMethodException.";
+			DeploymentStatusSingleton.getStatus().addError(desc, Module.ASPECT_WEAVER, Type.SPRING_AOP_WEAVER);
 			e.printStackTrace();
 		} catch (InvocationTargetException e) {
+			String desc = "Error adding url to classpath. URL: " + url + ". InvocationTargetException.";
+			DeploymentStatusSingleton.getStatus().addError(desc, Module.ASPECT_WEAVER, Type.SPRING_AOP_WEAVER);
 			e.printStackTrace();
 		}
 	}

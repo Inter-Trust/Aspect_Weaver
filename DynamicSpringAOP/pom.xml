@@ -48,6 +48,7 @@
 	  <aopalliance.version>1.0</aopalliance.version>
 	  <org.jdom.version>2.0.5</org.jdom.version>
 	  <ak.version>0.0.1-SNAPSHOT</ak.version>
+	  <errorHandling.version>0.0.1-SNAPSHOT</errorHandling.version>
   </properties>
   
   <dependencies>
@@ -169,6 +170,13 @@
 			<groupId>uma.caosd</groupId>
 			<artifactId>AspectualKnowledge</artifactId>
 			<version>${ak.version}</version>
+		</dependency>
+		
+		<!-- Error Handling -->  
+    <dependency>
+			<groupId>uma.caosd</groupId>
+			<artifactId>ErrorHandling</artifactId>
+			<version>${errorHandling.version}</version>
 		</dependency>
 		
   </dependencies>

@@ -11,6 +11,9 @@ import org.springframework.aop.support.AopUtils;
 import uma.caosd.DynamicSpringAOP.ProxiesRepository;
 import uma.caosd.DynamicSpringAOP.ProxySpringAOP;
 import uma.caosd.DynamicSpringAOP.imp.ProxySpringAOPImp;
+import uma.caosd.errorHandling.DeploymentStatusSingleton;
+import uma.caosd.errors.Module;
+import uma.caosd.errors.Type;
 
 /**
  * Intercept the call of the constructors to return a proxy of the new object or
@@ -75,6 +78,8 @@ public abstract aspect ProxyActivationAspect_Constructors {
 				bean = advised.getTargetSource().getTarget();
 			}
 		} catch (Exception e) {
+			String desc = "Error unwrapping proxy object: " + bean.getClass().getName() + ". Exception.";
+			DeploymentStatusSingleton.getStatus().addError(desc, Module.ASPECT_WEAVER, Type.SPRING_AOP_WEAVER);
 			e.printStackTrace();
 		}
 		return bean;
@@ -94,7 +99,9 @@ public abstract aspect ProxyActivationAspect_Constructors {
 			weaveExistingAspects(s);
 			proxy = addProxyToRepository(s);	
 		} catch (Exception e) {
-			System.out.println("Could not generate proxy of class " + o.getClass().getName());
+			String desc = "Could not generate proxy of class " + o.getClass().getName();
+			DeploymentStatusSingleton.getStatus().addError(desc, Module.ASPECT_WEAVER, Type.SPRING_AOP_WEAVER);
+			System.out.println(desc);
 		}
 		return proxy;
 	}

@@ -14,6 +14,9 @@ import uma.caosd.AspectualKnowledge.Advice;
 import uma.caosd.AspectualKnowledge.Advisor;
 import uma.caosd.AspectualKnowledge.Pointcut;
 import uma.caosd.AspectualKnowledge.DynamicAspects.DynamicAspect;
+import uma.caosd.errorHandling.DeploymentStatusSingleton;
+import uma.caosd.errors.Module;
+import uma.caosd.errors.Type;
 
 /**
  * Generate an .xml SpringAOP configuration file for an aspect with the provided configuration.
@@ -70,6 +73,9 @@ public class XMLAspectConfigurator {
 			xmlOutput.setFormat(Format.getPrettyFormat());
 			xmlOutput.output(doc, new FileWriter(filepath)); // filepath example: "c:\\file.xml"
 		} catch (IOException io) {
+			String desc = "Error generating xml configuration file. IOException.";
+			DeploymentStatusSingleton.getStatus().addError(desc, Module.ASPECT_WEAVER, Type.SPRING_AOP_WEAVER);
+			
 			io.printStackTrace();
 		}
 	}
