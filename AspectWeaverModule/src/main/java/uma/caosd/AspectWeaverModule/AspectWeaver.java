@@ -101,6 +101,7 @@ public class AspectWeaver {
 			producerAMQPErrors = new ActiveMQProducer(configAW.getErrorsBrokerURL(), configAW.getErrorsQueue());
 			//String content = SerializationUtils.objectToString(sap);
 			String content = XMLUtils.write(errors, DeploymentStatus.class);
+			XMLUtils.writeTemp("errorsStatus", errors, DeploymentStatus.class);
 			producerAMQPErrors.send(content);
 			producerAMQPErrors.cleanUp();
 			System.out.println(getClass().getSimpleName() + ">> errors/notifications of deployment sent.");

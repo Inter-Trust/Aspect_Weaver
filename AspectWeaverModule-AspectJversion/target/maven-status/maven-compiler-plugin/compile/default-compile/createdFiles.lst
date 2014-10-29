@@ -1,5 +1,7 @@
 uma\caosd\AspectWeaverModule\amqp\SAPAspectWeaverAMQPConsumer.class
+uma\caosd\AspectWeaverModule\main\QueueThread.class
 uma\caosd\AspectWeaverModule\AspectWeaver.class
+uma\caosd\AspectWeaverModule\amqp\SAPAspectWeaverThread.class
 uma\caosd\AspectWeaverModule\main\Main.class
 uma\caosd\AspectWeaverModule\ExecuteTheSecurityAdaptationPlan.class
 uma\caosd\AspectWeaverModule\main\MainTesting.class

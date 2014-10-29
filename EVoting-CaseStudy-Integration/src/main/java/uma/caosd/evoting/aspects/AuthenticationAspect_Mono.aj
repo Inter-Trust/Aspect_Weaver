@@ -59,6 +59,15 @@ public abstract aspect AuthenticationAspect_Mono extends IntertrustAspect {
 		Object configuration = StatusAspect.getConfiguration(ADVISOR_IDS[1]);
 		
 		System.out.println("Authentication userPass MONO");
+		try {
+			AdvisorConfiguration config = (AdvisorConfiguration) configuration;
+			System.out.println("Configuration MONO: " + configuration);
+			for (Parameter p : config.getConfigurationParameters().getParameter()) {
+				System.out.println(p.getName() + " -> " + p.getValue());
+			}
+		} catch (Exception e) {
+			
+		}
 		return proceed(vote);
 		// ...
 	}

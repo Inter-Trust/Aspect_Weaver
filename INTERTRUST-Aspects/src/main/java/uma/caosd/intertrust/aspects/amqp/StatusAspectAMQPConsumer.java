@@ -4,10 +4,7 @@ import java.io.IOException;
 
 import javax.jms.JMSException;
 
-import uma.caosd.AspectualKnowledge.DynamicAspects.DynamicRepository;
 import uma.caosd.amqp.activemq.ActiveMQConsumer;
-import uma.caosd.amqp.utils.SerializationUtils;
-import uma.caosd.intertrust.aspects.IntertrustAspect;
 
 /**
  * AMQP Consumer for status of the aspects.
@@ -24,12 +21,12 @@ public class StatusAspectAMQPConsumer extends ActiveMQConsumer {
 
 	@Override
 	protected void onMessageReceived(String content) {
-		System.out.println(getClass().getSimpleName() + ">> new status aspects received.");
+		try {
+			StatusAspectThread t = new StatusAspectThread(content);
+			t.start();	
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
 		
-		DynamicRepository dynamicRepository = SerializationUtils.stringToObject(content);
-		//StatusAspect.updateRepository(dynamicRepository);
-		IntertrustAspect.updateRepository(dynamicRepository);
-
-		System.out.println(getClass().getSimpleName() + ">> status aspects updated.");	
 	}
 }

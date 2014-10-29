@@ -7,6 +7,7 @@ E:\maven\repository\junit\junit\4.11\junit-4.11.jar;E:\maven\repository\org\aspe
 E:\workspaces\Java\workspace_INTERTRUST\AspectWeaverModule\target\classes
 E:\workspaces\Java\workspace_INTERTRUST\AspectWeaverModule\src\main\java\uma\caosd\AspectWeaverModule\amqp\AspectWeaverAMQPConfiguration.java
 E:\workspaces\Java\workspace_INTERTRUST\AspectWeaverModule\src\main\java\uma\caosd\AspectWeaverModule\amqp\SAPAspectWeaverAMQPConsumer.java
+E:\workspaces\Java\workspace_INTERTRUST\AspectWeaverModule\src\main\java\uma\caosd\AspectWeaverModule\amqp\SAPAspectWeaverThread.java
 E:\workspaces\Java\workspace_INTERTRUST\AspectWeaverModule\src\main\java\uma\caosd\AspectWeaverModule\AspectJExecuteTheSecurityAdaptationPlan.java
 E:\workspaces\Java\workspace_INTERTRUST\AspectWeaverModule\src\main\java\uma\caosd\AspectWeaverModule\AspectWeaver.java
 E:\workspaces\Java\workspace_INTERTRUST\AspectWeaverModule\src\main\java\uma\caosd\AspectWeaverModule\errorHandling\ErrorHandling.java
@@ -14,6 +15,7 @@ E:\workspaces\Java\workspace_INTERTRUST\AspectWeaverModule\src\main\java\uma\cao
 E:\workspaces\Java\workspace_INTERTRUST\AspectWeaverModule\src\main\java\uma\caosd\AspectWeaverModule\gui\AspectWeaverController.java
 E:\workspaces\Java\workspace_INTERTRUST\AspectWeaverModule\src\main\java\uma\caosd\AspectWeaverModule\gui\AspectWeaverView.java
 E:\workspaces\Java\workspace_INTERTRUST\AspectWeaverModule\src\main\java\uma\caosd\AspectWeaverModule\main\AspectWeaverLaunch.aj
+E:\workspaces\Java\workspace_INTERTRUST\AspectWeaverModule\src\main\java\uma\caosd\AspectWeaverModule\main\ExecutionTimeAspect.aj
 E:\workspaces\Java\workspace_INTERTRUST\AspectWeaverModule\src\main\java\uma\caosd\AspectWeaverModule\main\Main.java
 E:\workspaces\Java\workspace_INTERTRUST\AspectWeaverModule\src\main\java\uma\caosd\AspectWeaverModule\main\MainTesting.java
 E:\workspaces\Java\workspace_INTERTRUST\AspectWeaverModule\src\main\java\uma\caosd\AspectWeaverModule\main\QueueThread.java

@@ -6,6 +6,7 @@ E:\maven\repository\junit\junit\4.11\junit-4.11.jar;E:\maven\repository\org\aspe
 -d
 E:\workspaces\Java\workspace_INTERTRUST\INTERTRUST-Aspects\target\classes
 E:\workspaces\Java\workspace_INTERTRUST\INTERTRUST-Aspects\src\main\java\uma\caosd\intertrust\aspects\amqp\StatusAspectAMQPConsumer.java
+E:\workspaces\Java\workspace_INTERTRUST\INTERTRUST-Aspects\src\main\java\uma\caosd\intertrust\aspects\amqp\StatusAspectThread.java
 E:\workspaces\Java\workspace_INTERTRUST\INTERTRUST-Aspects\src\main\java\uma\caosd\intertrust\aspects\gui\IntertrustAspectGUI.java
 E:\workspaces\Java\workspace_INTERTRUST\INTERTRUST-Aspects\src\main\java\uma\caosd\intertrust\aspects\IntertrustAspect.java
 E:\workspaces\Java\workspace_INTERTRUST\INTERTRUST-Aspects\src\main\java\uma\caosd\intertrust\aspects\IntertrustInitialization.aj

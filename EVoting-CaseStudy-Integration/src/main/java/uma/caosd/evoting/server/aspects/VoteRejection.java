@@ -13,7 +13,7 @@ public class VoteRejection extends IntertrustAspect implements MethodBeforeAdvic
 	
 	@Override
 	public void before(Method method, Object[] args, Object target) throws Throwable {
-		if (StatusAspect.isEnabled(VOTE_REJECTION_ADVISOR_ID, getUserID((UserVote) args[0]))) {
+		if (StatusAspect.isEnabled(VOTE_REJECTION_ADVISOR_ID)) {
 			reject();	
 		}
 	}

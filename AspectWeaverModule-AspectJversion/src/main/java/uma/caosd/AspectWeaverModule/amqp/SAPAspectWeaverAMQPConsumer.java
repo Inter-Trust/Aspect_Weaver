@@ -5,9 +5,7 @@ import java.io.IOException;
 import javax.jms.JMSException;
 
 import uma.caosd.AspectWeaverModule.AspectWeaver;
-import uma.caosd.AspectualKnowledge.AdaptationPlan;
 import uma.caosd.amqp.activemq.ActiveMQConsumer;
-import uma.caosd.amqp.utils.XMLUtils;
 
 public class SAPAspectWeaverAMQPConsumer extends ActiveMQConsumer {
 	private AspectWeaver aspectWeaver;
@@ -19,12 +17,13 @@ public class SAPAspectWeaverAMQPConsumer extends ActiveMQConsumer {
 
 	@Override
 	protected void onMessageReceived(String content) {
-		System.out.println(getClass().getSimpleName() + ">> new security adaptation plan received.");
+		try {
+			SAPAspectWeaverThread t = new SAPAspectWeaverThread(aspectWeaver, content);
+			t.start();	
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
 		
-		//AdaptationPlan sap = SerializationUtils.stringToObject(content);
-		AdaptationPlan sap = XMLUtils.read(content, AdaptationPlan.class);
-		aspectWeaver.executeAdaptationPlan(sap);
 		
-		System.out.println(getClass().getSimpleName() + ">> adaptation plan executed.");	
 	}
 }
